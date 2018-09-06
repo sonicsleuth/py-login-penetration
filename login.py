@@ -7,9 +7,10 @@ from bs4 import BeautifulSoup
 # Load mock data (our list of fake users)
 people = json.loads(open('mock_data.json').read())
 
-# Let's create some new accounts!
 # Log our results to this file.
 f = open("log.txt", "a")
+
+# Begin multiple login attempts
 for person in people:
     # Load the Login Form to get our cookies and unique csrf_token.
     print("Load Form...")
@@ -40,4 +41,4 @@ for person in people:
     f.write("Email: " + email + " Password: " + password + "\n")
     f.write(str(result.content) + "\n")
 
-# END-OF-FILE
+# end-of-file
